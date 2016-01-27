@@ -45,8 +45,8 @@ var checkOpen = function(data, inp){
               && course.openSections;
   });
 
-  var ret = [];
-  filCourses.forEach(function(openCourse){
+  var ret = {};
+  filCourses.forEach(function(openCourse, ind){
     var openSections = [];
 
     openCourse.sections.forEach(function(section){
@@ -57,12 +57,12 @@ var checkOpen = function(data, inp){
       }
     });
 
-    var obj = {}; obj[openCourse.courseNumber] = openSections;
-    ret.push(obj);
+    ret[openCourse.courseNumber] = openSections;
+    if(ind === filCourses.length - 1){ //last one done
+      var endFunc = inp.endFunc;
+      endFunc(ret);
+    }
   });
-
-  var endFunc = inp.endFunc;
-  endFunc(ret);
 }
 
 module.exports = isOpen;

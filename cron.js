@@ -3,6 +3,7 @@ var fs = require('fs');
 var exec = require('child_process').exec;
 
 const coursefileLoc = './courses.txt';
+var courses;
 
 var initCourses = function(loc){
   var str = fs.readFileSync(loc).toString();
@@ -32,17 +33,24 @@ var initCourses = function(loc){
 
 var output = function(ret){
   if(ret){
-    var url = 'https://sims.rutgers.edu/webreg/editSchedule.htm?login=cas&semesterSelection=12016&indexList=02667';
-    var command = 'casperjs ./sniperjs ' + url;
+    var url = "'https://sims.rutgers.edu/webreg/editSchedule.htm?login=cas&semesterSelection=12016'";
+    var indexList = "&indexList=";
+    var subjects = Object.keys(ret);
+    subjects.forEach(function(course){
+      indexList += (ret[course])[0] + ',';
+    });
+    url+=indexList;
+
+    var command = 'casperjs sniper.js ' + url;
     exec(command, function(error, stdout, stderr){
       console.log(stderr);
       console.log(stdout);
-      if(error) console.log('cronjs failed to execute ' + error);
+      if(error) console.log('cronjs failed to execute : ' + error);
     });
   }
 }
 
-var courses = initCourses(coursefileLoc);
+courses = initCourses(coursefileLoc);
 var subjects = Object.keys(courses);
 subjects.forEach(function(subject){
   checker(subject, courses[subject], output);
