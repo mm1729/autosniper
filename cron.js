@@ -33,13 +33,14 @@ var initCourses = function(loc){
 
 var output = function(ret){
   if(ret){
-    var url = "'https://sims.rutgers.edu/webreg/editSchedule.htm?login=cas&semesterSelection=12016'";
+    var url = "https://sims.rutgers.edu/webreg/editSchedule.htm?login=cas&semesterSelection=92016";
     var indexList = "&indexList=";
     var subjects = Object.keys(ret);
     subjects.forEach(function(course){
       indexList += (ret[course])[0] + ',';
     });
     url+=indexList;
+    console.log(url);
 
     var command = 'casperjs sniper.js ' + url;
     exec(command, function(error, stdout, stderr){

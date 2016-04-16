@@ -1,0 +1,20 @@
+{
+  "name": "autosniper",
+  "version": "1.0.0",
+  "description": "Course Sniper for Rutgers that alerts and adds the course on WebReg automatically",
+  "main": "checker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mm1729/autosniper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mm1729/autosniper/issues"
+  },
+  "homepage": "https://github.com/mm1729/autosniper#readme"
+}

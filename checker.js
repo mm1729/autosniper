@@ -6,7 +6,7 @@ var isOpen = function(subject, courses, callFunc){
   const hostUrl = 'http://sis.rutgers.edu/soc/courses.json?';
   var data = {
     'campus' : 'NB',
-    'semester' : 12016,
+    'semester' : 92016,
     'level' : 'U,G',
     'subject' : subject
   };
