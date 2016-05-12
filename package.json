@@ -2,7 +2,7 @@
   "name": "autosniper",
   "version": "1.0.0",
   "description": "Course Sniper for Rutgers that alerts and adds the course on WebReg automatically",
-  "main": "checker.js",
+  "main": "cron.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
