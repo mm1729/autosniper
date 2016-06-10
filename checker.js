@@ -32,7 +32,8 @@ var getJSONData = function(url, endFunc, endFuncInp){
     });
 
     res.on('end', function(end){
-      endFunc(JSON.parse(e), endFuncInp);
+      console.log('got data');
+      checkOpen(JSON.parse(e), endFuncInp);
     });
   });
 }
@@ -40,12 +41,14 @@ var getJSONData = function(url, endFunc, endFuncInp){
 var checkOpen = function(data, inp){
   var courses = inp.courses;
 
+  console.log('in checkopen');
   var filCourses = data.filter(function(course){
     return courses.indexOf(Number(course.courseNumber)) !== -1
               && course.openSections;
   });
 
   var ret = {};
+  console.log(filCourses);
   filCourses.forEach(function(openCourse, ind){
     var openSections = [];
 
@@ -57,12 +60,10 @@ var checkOpen = function(data, inp){
       }
     });
 
-    ret[openCourse.courseNumber] = openSections;
-    if(ind === filCourses.length - 1){ //last one done
-      var endFunc = inp.endFunc;
-      endFunc(ret);
-    }
+    var courseId = openCourse.subject + ':' + openCourse.courseNumber;
+    ret[courseId] = openSections;
   });
+  endFunc(ret);
 }
 
 module.exports = isOpen;

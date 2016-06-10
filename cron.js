@@ -3,6 +3,7 @@ var fs = require('fs');
 var exec = require('child_process').exec;
 
 const coursefileLoc = './courses.txt';
+const sleepDur = 5000;
 var courses;
 
 var initCourses = function(loc){
@@ -32,7 +33,9 @@ var initCourses = function(loc){
 };
 
 var output = function(ret){
-  if(ret){
+  console.log('in output');
+  console.log(ret);
+  if(Object.keys(ret).length){
     var url = "https://sims.rutgers.edu/webreg/editSchedule.htm?login=cas&semesterSelection=92016";
     var indexList = "&indexList=";
     var subjects = Object.keys(ret);
@@ -52,7 +55,15 @@ var output = function(ret){
 }
 
 courses = initCourses(coursefileLoc);
+console.log(courses);
 var subjects = Object.keys(courses);
-subjects.forEach(function(subject){
-  checker(subject, courses[subject], output);
-});
+
+while(true) {
+  subjects.forEach(function(subject){
+    checker(subject, courses[subject], output);
+  });
+  // go to sleep
+  setTimeout(function() {
+    console.log('Going to sleep');
+  }, sleepDur);
+}
