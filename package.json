@@ -4,8 +4,9 @@
   "description": "Course Sniper for Rutgers that alerts and adds the course on WebReg automatically",
   "main": "cron.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start" : "node cron.js"  
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mm1729/autosniper.git"
