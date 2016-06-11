@@ -1,7 +1,0 @@
-Two components for the software:
-1. Need to check if course is available
-2. Authenticate the user and click add course
-
-Technologies to be used:
-1. Nodejs server w/ Ajax
-2. Phantomjs

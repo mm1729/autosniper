@@ -5,7 +5,7 @@
   "main": "cron.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start" : "node cron.js"  
+	"start" : "node ./app/cron.js"  
 },
   "repository": {
     "type": "git",
