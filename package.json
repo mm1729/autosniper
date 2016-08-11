@@ -5,14 +5,25 @@
   "main": "cron.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start" : "node ./app/cron.js"  
-},
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mm1729/autosniper.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "course",
+    "sniper",
+    "rutgers"
+  ],
+  "dependencies": {
+    "bufferutil": "1.2.1",
+    "express": "^4.2.0",
+    "lokijs": "^1.4.0",
+    "utf-8-validate": "1.2.1",
+    "ws": "1.1.1"
+  },
+  "author": "Moulindra Muchumari",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mm1729/autosniper/issues"
