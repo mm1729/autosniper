@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>RU Autosniper</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+    <script src="../scripts/index.js"></script>
+    <style>
+        .div-sectioned {
+          padding: 1em;
+        }
+        .col-centered {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <header>
+            <h1 class="text-danger">RU Autosniper</h1></header>
+        <hr>
+        <div class="lead">
+            <p>Tired of checking for open sections? Use the autosniper to automatically snipe when any section opens!</p>
+        </div>
+        <div>
+            <button class="btn btn-lg" id="login-btn">Login</button>
+            <button class="btn btn-lg btn-danger" id="signup-btn">Sign up</button>
+
+            <div class="div-sectioned">
+                <div class="col-sm-offset-4">
+                    <form id="login-form" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="email-login" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-3">
+                                <input type="email" id="email-login" class="form-control" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password-login" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-3">
+                                <input type="password" id="password-login" class="form-control" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-3">
+                                <button class="btn btn-lg btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-offset-4">
+                    <form id="signup-form" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Your email address</label>
+                            <div class="col-sm-3">
+                                <input type="email" id="email" class="form-control" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-2 control-label">Choose your password</label>
+                            <div class="col-sm-3">
+                                <input type="password" id="password" class="form-control" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password2" class="col-sm-2 control-label">Retype your password</label>
+                            <div class="col-sm-3">
+                                <input type="password" id="password2" class="form-control" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="netid" class="col-sm-2 control-label">Enter your NetID</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="netid" class="form-control" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cas-password" class="col-sm-2 control-label">Enter your CAS password</label>
+                            <div class="col-sm-3">
+                                <input type="password" id="cas-password" class="form-control" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-3">
+                                <button class="btn btn-lg btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
